@@ -4,11 +4,11 @@ A redesigned, content-preserving static website for Onyx Guardian.
 
 ## Pages
 
-- `index.html`
-- `about.html`
-- `services.html`
-- `careers.html`
-- `contact.html`
+- `/` (`index.html`)
+- `/about/` (`about/index.html`)
+- `/services/` (`services/index.html`)
+- `/careers/` (`careers/index.html`)
+- `/contact/` (`contact/index.html`)
 
 ## Run locally
 

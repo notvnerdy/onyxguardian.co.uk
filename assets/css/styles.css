@@ -232,6 +232,21 @@ main {
   pointer-events: none;
 }
 
+.hero-visual {
+  display: grid;
+  gap: 0.9rem;
+  align-self: stretch;
+}
+
+.hero-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid rgba(226, 191, 132, 0.4);
+  box-shadow: var(--shadow-card);
+}
+
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -436,6 +451,87 @@ main {
   color: var(--muted);
 }
 
+.card-image,
+.panel-image,
+.service-thumb,
+.profile-photo {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--line-soft);
+  margin-bottom: 0.95rem;
+}
+
+.service-thumb {
+  aspect-ratio: 16 / 10;
+}
+
+.panel-image {
+  aspect-ratio: 16 / 9;
+}
+
+.profile-card {
+  padding-top: 0.95rem;
+}
+
+.profile-photo {
+  aspect-ratio: 1 / 1;
+}
+
+.media-grid {
+  gap: 1rem;
+}
+
+.media-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, #fffefb 0%, #f8f0e2 100%);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.media-card:hover {
+  transform: translateY(-3px);
+  border-color: #cfa96a;
+  box-shadow: 0 28px 46px -34px rgba(11, 33, 53, 0.62);
+}
+
+.media-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.media-body {
+  padding: 1rem 1.1rem 1.2rem;
+}
+
+.media-body h3 {
+  font-size: 1.42rem;
+}
+
+.media-body p {
+  margin-top: 0.45rem;
+  color: var(--muted);
+}
+
+.image-banner {
+  margin: 0 auto;
+  max-width: 900px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-card);
+}
+
+.image-banner img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 .icon-dot {
   width: 0.96rem;
   height: 0.96rem;
@@ -529,6 +625,15 @@ main {
   padding-left: 1.35rem;
   color: #5b6e83;
   font-weight: 700;
+}
+
+.quote-media::before {
+  display: none;
+}
+
+.quote-media p,
+.quote-media small {
+  padding-left: 0;
 }
 
 .cta-block {
@@ -723,6 +828,16 @@ textarea:focus {
 ::selection {
   background: rgba(199, 154, 85, 0.35);
   color: #0a1622;
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #c6934c;
+  outline-offset: 2px;
 }
 
 @media (max-width: 1080px) {

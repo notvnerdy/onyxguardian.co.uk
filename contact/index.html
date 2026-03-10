@@ -12,15 +12,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
-    <link rel="manifest" href="site.webmanifest" />
-    <script defer src="assets/js/main.js"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <script defer src="../assets/js/main.js"></script>
   </head>
   <body>
     <div class="top-strip">
@@ -28,23 +28,23 @@
         <span>On-Call Service 24/7</span>
         <span>
           Phone: <a href="tel:+447563998447">07563998447</a> | Email:
-          <a href="mailto:contact@onyx.me.uk">contact@onyx.me.uk</a>
+          <a href="mailto:invoices@onyxguardian.co.uk">invoices@onyxguardian.co.uk</a>
         </span>
       </div>
     </div>
 
     <header class="site-header">
       <div class="container nav-wrap">
-        <a class="brand" href="index.html" aria-label="Onyx Guardian home">
-          <img class="brand-logo" src="assets/images/onyx-logo-guardian.png" alt="Onyx Guardian" />
+        <a class="brand" href="../" aria-label="Onyx Guardian home">
+          <img class="brand-logo" src="../assets/images/onyx-logo-guardian.png" alt="Onyx Guardian" />
         </a>
         <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
         <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-          <a class="nav-link" href="index.html">Home</a>
-          <a class="nav-link" href="about.html">About</a>
-          <a class="nav-link" href="services.html">Services</a>
-          <a class="nav-link" href="careers.html">Careers</a>
-          <a class="nav-link active" href="contact.html">Contact</a>
+          <a class="nav-link" href="../">Home</a>
+          <a class="nav-link" href="../about/">About</a>
+          <a class="nav-link" href="../services/">Services</a>
+          <a class="nav-link" href="../careers/">Careers</a>
+          <a class="nav-link active" href="../contact/">Contact</a>
         </nav>
         <a class="cta-phone" href="tel:+447563998447">Call 24/7</a>
       </div>
@@ -63,6 +63,20 @@
       </section>
 
       <section class="section section-tight">
+        <div class="container">
+          <figure class="image-banner reveal">
+            <img
+              src="../assets/images/site/team-2.jpg"
+              alt="Security specialist available for rapid client response and planning"
+              width="700"
+              height="700"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section section-tight">
         <div class="container contact-cards">
           <article class="card contact-card reveal" data-stagger>
             <h3>Phone</h3>
@@ -70,12 +84,47 @@
           </article>
           <article class="card contact-card reveal" data-stagger>
             <h3>Email</h3>
-            <p><a href="mailto:contact@onyx.me.uk">contact@onyx.me.uk</a></p>
+            <p><a href="mailto:invoices@onyxguardian.co.uk">invoices@onyxguardian.co.uk</a></p>
           </article>
           <article class="card contact-card reveal" data-stagger>
             <h3>Address</h3>
             <p>10 Spring Grove Road, Hounslow, England, TW3 4BJ</p>
           </article>
+        </div>
+      </section>
+
+      <section class="section section-tight">
+        <div class="container">
+          <div class="grid grid-2 media-grid">
+            <article class="media-card reveal" data-stagger>
+              <img
+                class="media-img"
+                src="../assets/images/site/service-access.png"
+                alt="Digital-first security management and access control systems"
+                width="480"
+                height="278"
+                loading="lazy"
+              />
+              <div class="media-body">
+                <h3>Fast Response Planning</h3>
+                <p>Share your requirements and we will recommend a practical, risk-aligned protection model.</p>
+              </div>
+            </article>
+            <article class="media-card reveal" data-stagger>
+              <img
+                class="media-img"
+                src="../assets/images/site/service-guarding.png"
+                alt="Field-ready guard force delivering dependable site coverage"
+                width="478"
+                height="320"
+                loading="lazy"
+              />
+              <div class="media-body">
+                <h3>Reliable Deployment</h3>
+                <p>Our team can support immediate and planned deployments for business, property, and events.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -121,6 +170,14 @@
           </article>
 
           <article class="muted-panel reveal" data-stagger>
+            <img
+              class="panel-image"
+              src="../assets/images/site/service-patrol.png"
+              alt="Patrol specialist delivering responsive on-site security services"
+              width="480"
+              height="252"
+              loading="lazy"
+            />
             <span class="eyebrow">Visit Us</span>
             <h2 style="margin-top: 0.8rem">Hounslow Office</h2>
             <p style="margin-top: 0.7rem; color: var(--muted)">
@@ -160,8 +217,8 @@
     <footer class="site-footer">
       <div class="container footer-grid">
         <div>
-          <a class="brand" href="index.html" aria-label="Onyx Guardian home">
-            <img class="brand-logo" src="assets/images/onyx-logo-guardian.png" alt="Onyx Guardian" />
+          <a class="brand" href="../" aria-label="Onyx Guardian home">
+            <img class="brand-logo" src="../assets/images/onyx-logo-guardian.png" alt="Onyx Guardian" />
           </a>
           <p style="margin-top: 0.8rem">
             Onyx Guardian offers reliable, professional security services across the UK with
@@ -171,17 +228,17 @@
         <div>
           <h4>Quick Links</h4>
           <div class="footer-links">
-            <a href="about.html">About Us</a>
-            <a href="services.html">Our Services</a>
-            <a href="careers.html">Careers</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="../about/">About Us</a>
+            <a href="../services/">Our Services</a>
+            <a href="../careers/">Careers</a>
+            <a href="../contact/">Contact Us</a>
           </div>
         </div>
         <div>
           <h4>Contact</h4>
           <div class="footer-links">
             <a href="tel:+447563998447">07563998447</a>
-            <a href="mailto:contact@onyx.me.uk">contact@onyx.me.uk</a>
+            <a href="mailto:invoices@onyxguardian.co.uk">invoices@onyxguardian.co.uk</a>
             <span>10 Spring Grove Road, Hounslow, England, TW3 4BJ</span>
           </div>
         </div>
