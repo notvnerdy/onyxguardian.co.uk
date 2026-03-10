@@ -1,7 +1,21 @@
-# onyxguardian.co.uk
+# Onyx Guardian Website
 
-Initial project repository for onyxguardian.co.uk.
+A redesigned, content-preserving static website for Onyx Guardian.
 
-## Status
+## Pages
 
-Project scaffold initialized.
+- `index.html`
+- `about.html`
+- `services.html`
+- `careers.html`
+- `contact.html`
+
+## Run locally
+
+From project root:
+
+```bash
+python3 -m http.server 8080
+```
+
+Then open `http://localhost:8080`.
