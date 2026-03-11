@@ -1,18 +1,35 @@
 (function () {
+  document.documentElement.classList.add("js-ready");
+
   var toggle = document.querySelector(".menu-toggle");
   var nav = document.querySelector(".site-nav");
 
   if (toggle && nav) {
+    var closeMenu = function () {
+      document.body.classList.remove("nav-open");
+      toggle.setAttribute("aria-expanded", "false");
+    };
+
     toggle.addEventListener("click", function () {
       var open = document.body.classList.toggle("nav-open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
 
     nav.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        document.body.classList.remove("nav-open");
-        toggle.setAttribute("aria-expanded", "false");
-      });
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", function (e) {
+      if (document.body.classList.contains("nav-open") && !nav.contains(e.target) && !toggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && document.body.classList.contains("nav-open")) {
+        closeMenu();
+        toggle.focus();
+      }
     });
   }
 
@@ -45,9 +62,17 @@
       { threshold: 0.15 }
     );
 
-    revealItems.forEach(function (item, index) {
+    var staggerIndex = 0;
+    var lastParent = null;
+    revealItems.forEach(function (item) {
       if (item.hasAttribute("data-stagger")) {
-        item.style.transitionDelay = String(index * 60) + "ms";
+        var parent = item.parentElement;
+        if (parent !== lastParent) {
+          staggerIndex = 0;
+          lastParent = parent;
+        }
+        item.style.transitionDelay = String(staggerIndex * 80) + "ms";
+        staggerIndex++;
       }
       observer.observe(item);
     });
