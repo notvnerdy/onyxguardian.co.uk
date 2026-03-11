@@ -123,6 +123,11 @@ p {
 .top-strip a {
   color: var(--accent-bright);
   font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.top-strip a:hover {
+  color: #fff;
 }
 
 .top-strip .container {
@@ -524,7 +529,7 @@ main {
   box-shadow: var(--shadow-card);
 }
 
-.hero-side-card h2 {
+.hero-side-card h3 {
   font-size: 1.24rem;
   letter-spacing: 0.012em;
 }
@@ -611,6 +616,12 @@ main {
   color: #18314a;
   background: linear-gradient(180deg, #fffef8 0%, #f5ebd8 100%);
   border-color: #dcb885;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(180deg, #fff8ec 0%, #eedcc0 100%);
+  border-color: #c9a261;
+  box-shadow: 0 14px 24px -18px rgba(88, 54, 11, 0.6);
 }
 
 .section {
@@ -753,6 +764,8 @@ main {
   padding: 1.28rem;
   box-shadow: var(--shadow-card);
   transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .card::before {
@@ -907,7 +920,7 @@ main {
 .split {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
-  gap: 1.2rem;
+  gap: 1.8rem;
 }
 
 .points {
@@ -1075,6 +1088,10 @@ textarea {
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
+select {
+  cursor: pointer;
+}
+
 input:hover,
 select:hover,
 textarea:hover {
@@ -1127,6 +1144,17 @@ textarea:focus {
   font-size: 1.3rem;
 }
 
+.contact-card a {
+  color: var(--accent-deep);
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.contact-card a:hover {
+  border-bottom-color: var(--accent-deep);
+}
+
 .site-footer {
   margin-top: 4.2rem;
   background: linear-gradient(180deg, #0b1a2b 0%, #0f2338 55%, #122941 100%);
@@ -1177,6 +1205,23 @@ textarea:focus {
 .js-ready .reveal.in-view {
   opacity: 1;
   transform: translateY(0);
+}
+
+.skip-link {
+  position: absolute;
+  left: -999rem;
+  top: 0;
+  z-index: 200;
+  padding: 0.6rem 1.2rem;
+  background: var(--accent);
+  color: #12263a;
+  font-weight: 700;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+.skip-link:focus {
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 ::selection {
@@ -1342,6 +1387,11 @@ textarea:focus-visible {
   .metrics-strip,
   .cta-block {
     grid-template-columns: 1fr;
+  }
+
+  .cta-block {
+    text-align: center;
+    justify-items: center;
   }
 
   .footer-grid {
