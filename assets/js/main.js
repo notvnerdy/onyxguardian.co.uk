@@ -16,6 +16,21 @@
     });
   }
 
+  var progress = document.createElement("div");
+  progress.className = "scroll-progress";
+  document.body.appendChild(progress);
+
+  var updateProgress = function () {
+    var scrollTop = window.scrollY || window.pageYOffset || 0;
+    var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    var ratio = maxScroll > 0 ? Math.min(scrollTop / maxScroll, 1) : 0;
+    progress.style.transform = "scaleX(" + ratio + ")";
+  };
+
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  window.addEventListener("resize", updateProgress);
+  updateProgress();
+
   var revealItems = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && revealItems.length) {
     var observer = new IntersectionObserver(
