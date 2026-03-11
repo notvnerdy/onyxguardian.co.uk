@@ -1,4 +1,6 @@
 (function () {
+  document.documentElement.classList.add("js-ready");
+
   var toggle = document.querySelector(".menu-toggle");
   var nav = document.querySelector(".site-nav");
 
@@ -45,9 +47,17 @@
       { threshold: 0.15 }
     );
 
-    revealItems.forEach(function (item, index) {
+    var staggerIndex = 0;
+    var lastParent = null;
+    revealItems.forEach(function (item) {
       if (item.hasAttribute("data-stagger")) {
-        item.style.transitionDelay = String(index * 60) + "ms";
+        var parent = item.parentElement;
+        if (parent !== lastParent) {
+          staggerIndex = 0;
+          lastParent = parent;
+        }
+        item.style.transitionDelay = String(staggerIndex * 80) + "ms";
+        staggerIndex++;
       }
       observer.observe(item);
     });

@@ -240,7 +240,7 @@ p {
 }
 
 main {
-  overflow: clip;
+  overflow-x: clip;
 }
 
 .hero {
@@ -288,7 +288,7 @@ main {
   content: "";
   position: absolute;
   left: 44%;
-  right: -4rem;
+  right: 0;
   top: 0.9rem;
   bottom: 0.9rem;
   border-radius: calc(var(--radius) + 6px);
@@ -545,7 +545,7 @@ main {
 .hero-shell::before {
   content: "";
   position: absolute;
-  right: -3.2rem;
+  right: 0;
   bottom: -3.3rem;
   width: 18rem;
   height: 18rem;
@@ -703,7 +703,7 @@ main {
 
 .section-heading {
   position: relative;
-  max-width: 68ch;
+  max-width: 42rem;
 }
 
 .section-heading h2 {
@@ -1152,13 +1152,13 @@ textarea:focus {
   font-size: 0.88rem;
 }
 
-.reveal {
+.js-ready .reveal {
   opacity: 0;
   transform: translateY(18px);
   transition: opacity 0.64s ease, transform 0.64s ease;
 }
 
-.reveal.in-view {
+.js-ready .reveal.in-view {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1180,14 +1180,25 @@ textarea:focus-visible {
 
 @media (max-width: 1080px) {
   .hero-shell,
-  .split,
-  .grid-3,
-  .grid-2,
-  .contact-cards,
-  .footer-grid,
-  .metrics-strip,
-  .cta-block {
+  .split {
     grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .metrics-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.8rem;
+  }
+
+  .footer-grid > :first-child {
+    grid-column: 1 / -1;
   }
 
   .hero-shell::after {
@@ -1312,6 +1323,18 @@ textarea:focus-visible {
     animation-duration: 20s;
   }
 
+  .grid-3,
+  .grid-2,
+  .contact-cards,
+  .metrics-strip,
+  .cta-block {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
   .form-grid {
     grid-template-columns: 1fr;
   }
@@ -1321,7 +1344,7 @@ textarea:focus-visible {
   body::before,
   body::after,
   .hero::after,
-  .reveal,
+  .js-ready .reveal,
   .btn,
   .card,
   .btn-primary::after,
