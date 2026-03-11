@@ -23,6 +23,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   margin: 0;
@@ -98,7 +102,7 @@ p {
 
 .scroll-progress {
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 3px;
@@ -134,6 +138,7 @@ p {
   top: 0;
   z-index: 40;
   background: rgba(10, 24, 39, 0.86);
+  -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(226, 191, 132, 0.3);
   box-shadow: 0 10px 28px -24px rgba(0, 0, 0, 0.85);
@@ -224,6 +229,12 @@ p {
   padding: 0.46rem 0.8rem;
   font: inherit;
   font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.menu-toggle:hover {
+  background: rgba(226, 191, 132, 0.28);
 }
 
 .cta-phone {
@@ -237,6 +248,12 @@ p {
   padding: 0.48rem 0.82rem;
   font-size: 0.9rem;
   font-weight: 700;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cta-phone:hover {
+  background: linear-gradient(145deg, rgba(226, 191, 132, 0.36), rgba(199, 154, 85, 0.36));
+  transform: translateY(-1px);
 }
 
 main {
@@ -455,6 +472,7 @@ main {
   border: 1px solid rgba(226, 191, 132, 0.38);
   border-radius: var(--radius-sm);
   background: rgba(7, 20, 33, 0.78);
+  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   padding: 0.72rem 0.8rem;
   box-shadow: 0 18px 28px -20px rgba(0, 0, 0, 0.72);
@@ -562,6 +580,7 @@ main {
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.012em;
+  cursor: pointer;
   transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
 }
 
@@ -941,7 +960,7 @@ main {
 .quote::before {
   content: "\201C";
   position: absolute;
-  top: -0.58rem;
+  top: 0.2rem;
   left: 0;
   font-size: 3.05rem;
   line-height: 1;
@@ -1135,6 +1154,7 @@ textarea:focus {
 
 .footer-links a {
   color: #d0dceb;
+  transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
@@ -1180,7 +1200,8 @@ textarea:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  .grid-3 {
+  .grid-3,
+  .contact-cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
