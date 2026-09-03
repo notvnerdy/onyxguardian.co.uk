@@ -7,6 +7,8 @@ A redesigned, content-preserving static website for Onyx Guardian.
 - `/` (`index.html`)
 - `/about/` (`about/index.html`)
 - `/services/` (`services/index.html`)
+- `/articles/` (`articles/index.html`)
+- `/articles/sp-fabrication/` (`articles/sp-fabrication/index.html`)
 - `/careers/` (`careers/index.html`)
 - `/contact/` (`contact/index.html`)
 
