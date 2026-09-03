@@ -1,0 +1,10 @@
+# Apache configuration for Onyx Guardian static site
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+</IfModule>
+
+# Prevent 500 error on missing files/directories
+ErrorDocument 404 /index.html
